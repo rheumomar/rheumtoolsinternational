@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>International Rheumatology Tools</title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXX');
+    function trackGA(path) {
+      gtag('event', 'page_view', {
+        page_title: path,
+        page_location: window.location.origin + path,
+        page_path: path
+      });
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .tool-frame {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border: none;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    .tool-frame.active {
+      visibility: visible;
+      pointer-events: auto;
+      z-index: 10;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 p-4">
+  <div class="max-w-screen-2xl mx-auto">
+    <h1 class="text-3xl font-bold mb-2 text-center text-blue-900">🌍 International Rheumatology Tools</h1>
+    <h2 class="text-xl font-semibold mb-4 text-center text-gray-700">🧑‍⚕️ Powered by RheumGuide.ca</h2>
+
+    <div class="flex flex-wrap gap-2 justify-center mb-6 overflow-x-auto whitespace-nowrap">
+      <!-- Arabic -->
+      <div class="flex flex-col items-center bg-white shadow rounded px-2 py-1">
+        <button onclick="showTab('mdhaq_ar', '/mdhaqarabic.html')" class="bg-green-600 text-white px-4 py-1 rounded text-xs font-semibold">MDHAQ (Arabic)</button>
+        <a href="https://www.rheumguide.ca/mdhaqarabic.html" target="_blank" class="text-green-700 text-[10px] underline mt-1">Direct Link</a>
+      </div>
+      <div class="flex flex-col items-center bg-white shadow rounded px-2 py-1">
+        <button onclick="showTab('basdai_ar', '/basdaiarabic.html')" class="bg-green-600 text-white px-4 py-1 rounded text-xs font-semibold">BASDAI (Arabic)</button>
+        <a href="https://www.rheumguide.ca/basdaiarabic.html" target="_blank" class="text-green-700 text-[10px] underline mt-1">Direct Link</a>
+      </div>
+
+      <!-- Urdu -->
+      <div class="flex flex-col items-center bg-white shadow rounded px-2 py-1">
+        <button onclick="showTab('mdhaq_ur', '/mdhaqurdu.html')" class="bg-purple-600 text-white px-4 py-1 rounded text-xs font-semibold">MDHAQ (Urdu)</button>
+        <a href="https://www.rheumguide.ca/mdhaqurdu.html" target="_blank" class="text-purple-700 text-[10px] underline mt-1">Direct Link</a>
+      </div>
+      <div class="flex flex-col items-center bg-white shadow rounded px-2 py-1">
+        <button onclick="showTab('basdai_ur', '/basdaiurdu.html')" class="bg-purple-600 text-white px-4 py-1 rounded text-xs font-semibold">BASDAI (Urdu)</button>
+        <a href="https://www.rheumguide.ca/basdaiurdu.html" target="_blank" class="text-purple-700 text-[10px] underline mt-1">Direct Link</a>
+      </div>
+
+      <!-- Turkish -->
+      <div class="flex flex-col items-center bg-white shadow rounded px-2 py-1">
+        <button onclick="showTab('mdhaq_tr', '/mdhaqaturk.html')" class="bg-red-600 text-white px-4 py-1 rounded text-xs font-semibold">MDHAQ (Turkish)</button>
+        <a href="https://www.rheumguide.ca/mdhaqturk.html" target="_blank" class="text-red-700 text-[10px] underline mt-1">Direct Link</a>
+      </div>
+      <div class="flex flex-col items-center bg-white shadow rounded px-2 py-1">
+        <button onclick="showTab('basdai_tr', '/basdaiturk.html')" class="bg-red-600 text-white px-4 py-1 rounded text-xs font-semibold">BASDAI (Turkish)</button>
+        <a href="https://www.rheumguide.ca/basdaiturk.html" target="_blank" class="text-red-700 text-[10px] underline mt-1">Direct Link</a>
+      </div>
+
+      <!-- Farsi -->
+      <div class="flex flex-col items-center bg-white shadow rounded px-2 py-1">
+        <button onclick="showTab('mdhaq_fa', '/mdhaqfarsi.html')" class="bg-pink-600 text-white px-4 py-1 rounded text-xs font-semibold">MDHAQ (Farsi)</button>
+        <a href="https://www.rheumguide.ca/mdhaqfarsi.html" target="_blank" class="text-pink-700 text-[10px] underline mt-1">Direct Link</a>
+      </div>
+      <div class="flex flex-col items-center bg-white shadow rounded px-2 py-1">
+        <button onclick="showTab('basdai_fa', '/basdaifarsi.html')" class="bg-pink-600 text-white px-4 py-1 rounded text-xs font-semibold">BASDAI (Farsi)</button>
+        <a href="https://www.rheumguide.ca/basdaifarsi.html" target="_blank" class="text-pink-700 text-[10px] underline mt-1">Direct Link</a>
+      </div>
+
+      <!-- Mandarin -->
+      <div class="flex flex-col items-center bg-white shadow rounded px-2 py-1">
+        <button onclick="showTab('mdhaq_zh', '/mdhaqmandarin.html')" class="bg-orange-600 text-white px-4 py-1 rounded text-xs font-semibold">MDHAQ (Mandarin)</button>
+        <a href="https://www.rheumguide.ca/mdhaqmandarin.html" target="_blank" class="text-orange-700 text-[10px] underline mt-1">Direct Link</a>
+      </div>
+
+      <!-- Cantonese -->
+      <div class="flex flex-col items-center bg-white shadow rounded px-2 py-1">
+        <button onclick="showTab('mdhaq_zhhk', '/mdhaqcantonese.html')" class="bg-yellow-600 text-white px-4 py-1 rounded text-xs font-semibold">MDHAQ (Cantonese)</button>
+        <a href="https://www.rheumguide.ca/mdhaqcantonese.html" target="_blank" class="text-yellow-700 text-[10px] underline mt-1">Direct Link</a>
+      </div>
+      <div class="flex flex-col items-center bg-white shadow rounded px-2 py-1">
+        <button onclick="showTab('basdai_zhhk', '/basdaicantonese.html')" class="bg-yellow-600 text-white px-4 py-1 rounded text-xs font-semibold">BASDAI (Cantonese)</button>
+        <a href="https://www.rheumguide.ca/basdaicantonese.html" target="_blank" class="text-yellow-700 text-[10px] underline mt-1">Direct Link</a>
+      </div>
+    </div>
+
+    <!-- Frame Container -->
+    <div class="relative w-full h-[80vh] border rounded shadow-lg">
+      <iframe id="mdhaq_ar" src="https://www.rheumguide.ca/mdhaqarabic.html" class="tool-frame active" allow="clipboard-read; clipboard-write"></iframe>
+      <iframe id="basdai_ar" src="https://www.rheumguide.ca/basdaiarabic.html" class="tool-frame" allow="clipboard-read; clipboard-write"></iframe>
+      <iframe id="mdhaq_ur" src="https://www.rheumguide.ca/mdhaqurdu.html" class="tool-frame" allow="clipboard-read; clipboard-write"></iframe>
+      <iframe id="basdai_ur" src="https://www.rheumguide.ca/basdaiurdu.html" class="tool-frame" allow="clipboard-read; clipboard-write"></iframe>
+      <iframe id="mdhaq_tr" src="https://www.rheumguide.ca/mdhaqturk.html" class="tool-frame" allow="clipboard-read; clipboard-write"></iframe>
+      <iframe id="basdai_tr" src="https://www.rheumguide.ca/basdaiturk.html" class="tool-frame" allow="clipboard-read; clipboard-write"></iframe>
+      <iframe id="mdhaq_fa" src="https://www.rheumguide.ca/mdhaqfarsi.html" class="tool-frame" allow="clipboard-read; clipboard-write"></iframe>
+      <iframe id="basdai_fa" src="https://www.rheumguide.ca/basdaifarsi.html" class="tool-frame" allow="clipboard-read; clipboard-write"></iframe>
+      <iframe id="mdhaq_zh" src="https://www.rheumguide.ca/mdhaqmandarin.html" class="tool-frame" allow="clipboard-read; clipboard-write"></iframe>
+      <iframe id="mdhaq_zhhk" src="https://www.rheumguide.ca/mdhaqcantonese.html" class="tool-frame" allow="clipboard-read; clipboard-write"></iframe>
+      <iframe id="basdai_zhhk" src="https://www.rheumguide.ca/basdaicantonese.html" class="tool-frame" allow="clipboard-read; clipboard-write"></iframe>
+    </div>
+  </div>
+
+  <script>
+    function showTab(i, p) {
+      document.querySelectorAll(".tool-frame").forEach(e => e.classList.remove("active"));
+      document.getElementById(i).classList.add("active");
+      trackGA(p);
+    }
+  </script>
+</body>
+</html>
+
